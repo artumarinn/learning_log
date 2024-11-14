@@ -15,9 +15,11 @@ class Entry(models.Model):
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
-class Meta:
-    verbose_name_plural = 'entries'
+    class Meta:
+        verbose_name_plural = 'entries'
 
-def __str__(self):
-    """Devuelve una cadena simple que representa la entrada"""
-    return f"{self.text[:50]}..."
+    def __str__(self):
+        """Devuelve una cadena simple que representa la entrada"""
+        if len(self.text) > 50:
+            return f"{self.text[:50]}..."
+        return self.text
