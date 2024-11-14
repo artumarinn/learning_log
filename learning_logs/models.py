@@ -8,4 +8,16 @@ class Topic(models.Model):
     def __str__(self):
         """Devuelve una representacion del modelo como cadena"""
         return self.text
-    
+
+class Entry(models.Model):
+    """Algo especifico aprendido sobre un tema."""
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    text = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+class Meta:
+    verbose_name_plural = 'entries'
+
+def __str__(self):
+    """Devuelve una cadena simple que representa la entrada"""
+    return f"{self.text[:50]}..."
