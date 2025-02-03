@@ -13,5 +13,7 @@ urlpatterns = [
     path('topics/<int:topic_id>/', views.topic, name='topic'),
     # Pagina para añadir un tema nuevo
     path('new_topic/', views.new_topic, name='new_topic'),
+    # Pagina para añadir una entrada nueva.
+    path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
 ]
 
