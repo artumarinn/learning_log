@@ -15,5 +15,7 @@ urlpatterns = [
     path('new_topic/', views.new_topic, name='new_topic'),
     # Pagina para añadir una entrada nueva.
     path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
+    # Pagina para editar entradas
+    path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
 ]
 
