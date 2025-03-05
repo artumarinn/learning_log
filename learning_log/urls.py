@@ -19,5 +19,6 @@ from django.urls import path, include # funcion para crear rutas url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
     path('', include('learning_logs.urls')),
 ]
